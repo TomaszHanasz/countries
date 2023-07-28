@@ -2,6 +2,16 @@
   text-align: center;
 }
 
+body {
+  background-color: steelblue;
+}
+
+.countries-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 20px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
