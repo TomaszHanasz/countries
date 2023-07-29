@@ -4,7 +4,7 @@ export interface ICountries {
   status: string;
   unMember: boolean;
   currencies: Currencies;
-  capital?: string[] | null;
+  capital: string;
   region: string;
   subregion: string;
   languages: Languages;

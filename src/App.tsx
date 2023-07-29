@@ -4,6 +4,7 @@ import "./App.css";
 import axios from "axios";
 import { ICountries } from "./Types";
 import { CustomButton } from "./components/customButton/CustomButton";
+import { CountryCard } from "./components/countryCard/CountryCard";
 
 function App() {
   const [country, setCountry] = useState<ICountries>();
@@ -106,30 +107,15 @@ function App() {
               {neighbours &&
                 neighbours.map((el, index) => {
                   return (
-                    <>
-                      <div
-                        key={index}
-                        className="card mx-auto mb-3"
-                        style={{ width: "90%" }}
-                      >
-                        <img
-                          src={el.flags.svg}
-                          className="card-img-top"
-                          alt="none"
-                          width={"100%"}
-                          onClick={() => getCountry(el.name.common)}
-                        />
-                        <h5 className="card-title">
-                          {el.name.common} - {el.name.official}
-                        </h5>
-                        <div className="text-start">
-                          <p className="small m-0">Capital: {el.capital}</p>
-                          <p className="small m-0">
-                            Population: {el.population}
-                          </p>
-                        </div>
-                      </div>
-                    </>
+                    <CountryCard
+                      key={index}
+                      name={el.name.common}
+                      officialName={el.name.official}
+                      onClick={() => getCountry(el.name.common)}
+                      flag={el.flags.svg}
+                      population={el.population}
+                      capital={el.capital}
+                    />
                   );
                 })}
             </div>
