@@ -24,6 +24,7 @@ function App() {
       setCountry(data.data[0]);
       setBorders(data.data[0].borders);
       setLocation(data.data[0].maps.googleMaps);
+      setNeighbours([]);
       console.log(data.data[0]);
     } catch (error) {
       console.log("fetching error", error);
